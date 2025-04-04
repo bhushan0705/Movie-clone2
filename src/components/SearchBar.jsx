@@ -69,7 +69,7 @@ const SearchBar = () => {
               <input
                 type="text"
                 placeholder="Search Movie"
-                className="border border-gray-400 bg-white text-red-600 italic h-10 w-30 lg:w-56 rounded-md px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="border border-gray-400 bg-white text-red-600 italic h-10 w-15 lg:w-56 rounded-md px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onChange={(e) => setSearchInput(e.target.value)}
                 value={searchInput}
                 ref={inputRef}

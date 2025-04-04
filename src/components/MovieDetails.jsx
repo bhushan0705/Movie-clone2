@@ -19,7 +19,7 @@ const MovieDetails = ({ movie, onClose }) => {
   if (!movie) return console.log("movie not found!") || null;
 
   return (
-    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50 text-white">
+    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50 text-white overflow-y-scroll">
       <div className="bg-slate-800 p-6 rounded-lg max-w-2xl w-full relative md:max-w-3xl md:flex md:gap-8">
         <button
           onClick={onClose}
