@@ -1,6 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Index from "./routes";
+import Index from "./NavBarLinks";
 import Home from "./pages/Home";
 import ExplorePage from "./pages/ExplorePage";
 import DetailsPage from "./pages/DetailsPage";
