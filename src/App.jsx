@@ -1,6 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Index from "./NavBarLinks";
+import NavBarLinks from "./NavBarLinks/NavBarLinks";
 import Home from "./pages/Home";
 import ExplorePage from "./pages/ExplorePage";
 import DetailsPage from "./pages/DetailsPage";
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <div>
-        <Index></Index>
+        <NavBarLinks></NavBarLinks>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/explore/:explore" element={<ExplorePage />} />

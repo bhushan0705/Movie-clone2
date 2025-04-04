@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 import SearchBar from "../components/SearchBar";
 import { useSelector } from "react-redux";
 
-const Index = () => {
+const NavBarLinks = () => {
 
 
   const isLogged = useSelector((state) => state.auth.isAuthenticated);
@@ -46,4 +46,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default NavBarLinks;
