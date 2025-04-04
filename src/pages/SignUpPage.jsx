@@ -26,11 +26,10 @@ const SignUpPage = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen text-white relative px-4">
-      <img
-        src={bgImg}
-        alt="background"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
+      <div
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 top-0"
+  style={{ backgroundImage: `url(${bgImg})` }}
+></div>
       <div className="absolute inset-0 bg-black/80 z-10"></div>
 
       <form onSubmit={handleSignUp} className="w-full max-w-md z-20">
