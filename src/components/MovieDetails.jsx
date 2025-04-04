@@ -21,20 +21,16 @@ const MovieDetails = ({ movie, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50 text-white overflow-y-scroll">
       <div className="bg-slate-800 p-6 rounded-lg max-w-2xl w-full relative md:max-w-3xl md:flex md:gap-8">
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-4 text-xl font-bold text-red-600 cursor-pointer"
-        >
-          X
-        </button>
-
+        
+        {/* Image Section */}
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title || movie.name}
           className="w-full h-[400px] object-cover rounded-lg mt-4 transition-transform duration-500 hover:scale-101 md:w-1/3"
         />
 
-        <div className="mt-4 md:mt-0 md:w-2/3">
+        {/* Content Section */}
+        <div className="mt-4 md:mt-0 md:w-2/3 flex flex-col justify-between">
           <h2 className="text-4xl font-bold">{movie.title || movie.name}</h2>
 
           <p className="mt-4 text-sm line-clamp-5">
@@ -42,6 +38,7 @@ const MovieDetails = ({ movie, onClose }) => {
             <br />
             {movie.overview}
           </p>
+
           <div className="mt-4">
             <p>
               <strong>Release Date:</strong> {movie.release_date || "N/A"}
@@ -58,12 +55,23 @@ const MovieDetails = ({ movie, onClose }) => {
               <strong>RunTime: </strong>
               {(movie.runtime / 60).toFixed(1)} hr
             </p>
+          </div>
 
+          {/* Close Button & Play Button in One Row on md */}
+          <div className="flex items-center justify-between mt-4">
             <button
               onClick={handlePlayVideo}
-              className="border-none px-8 py-3 mt-10 cursor-pointer bg-red-600 text-black font-bold rounded-sm transition-transform duration-300 hover:scale-105 flex items-center gap-2"
+              className="border-none px-8 py-3 cursor-pointer bg-red-600 text-black font-bold rounded-sm transition-transform duration-300 hover:scale-105 flex items-center gap-2"
             >
               <i className="fa fa-play" aria-hidden="true"></i> Play
+            </button>
+
+            {/* Close Button Positioned near Play Button in md */}
+            <button
+              onClick={onClose}
+              className="lg:top-2 lg:right-4 text-xl font-bold text-red-600 cursor-pointer md:static md:text-lg"
+            >
+              ✖
             </button>
           </div>
         </div>
