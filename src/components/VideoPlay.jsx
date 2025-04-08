@@ -13,8 +13,8 @@ const VideoPlay = ({ videoId, close }) => {
 
   useEffect(() => {
     if (videoInfo.length > 0) {
-      const trailers = videoInfo.filter((video) => video.type === "Trailer"); // Get only trailers
-      setTrailer(trailers.length > 0 ? trailers[0] : videoInfo[0]); // Pick trailer if available
+      const trailers = videoInfo.filter((video) => video.type === "Trailer"); 
+      setTrailer(trailers.length > 0 ? trailers[0] : videoInfo[0]); 
     }
   }, [videoInfo]);
 

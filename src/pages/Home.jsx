@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import Fetching from "../constant.jsx/Fetching";
 import MovieFetcher from "../components/MovieFetcher";
 import VideoPlayer from "../components/VideoPlayer";
 import Cards from "../components/Cards";
 import SignUpPage from "./SignUpPage";
-import bgImg from '../assets/bgImg.jpg'
+import useFetchMovies from "../hooks/useFetchMovie";
+
 
 const Home = () => {
   const [videoId, setVideoId] = useState(null);
   const isLogged = useSelector((state) => state.auth.isAuthenticated);
 
+  useFetchMovies();
+
   return (
-    <>
-      <Fetching />
+    <>      
       {isLogged ? (
         <div className="h-[100vh]">
           <MovieFetcher onMovieFetched={setVideoId} />
@@ -23,7 +24,6 @@ const Home = () => {
       ) : (
         <div>
           <SignUpPage />
-          {/* <img src={bgImg} alt="" /> */}
         </div>
       )}
     </>

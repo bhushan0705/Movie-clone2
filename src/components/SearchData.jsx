@@ -37,8 +37,8 @@ const SearchData = ({ searchQuery }) => {
   const seen = new Set();
   const filteredMovies = combinedMovieData.filter((movie) => {
     const movieTitle = movie?.name || movie?.title || "";
-    const movieId = movie?.id;
 
+    const movieId = movie?.id;
     if (seen.has(movieId)) {
       return false;
     }
